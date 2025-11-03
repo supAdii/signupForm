@@ -38,26 +38,43 @@
           </div>
 
           <form class="loginForm" action="#">
+            <p id="successMessage" class="successMsg"></p>
             <label for="firstName" class="visually-hidden">First Name</label>
-            <input class="formInput" id="firstName" type="text" placeholder="First Name" />
+            <input
+              class="formInput"
+              id="firstName"
+              type="text"
+              placeholder="First Name"
+            />
+            <p class="errorMsg" id="firstNameError"></p>
+
             <label for="lastName" class="visually-hidden">Last Name</label>
-            <input class="formInput" id="lastName" type="text" placeholder="Last Name" />
+            <input
+              class="formInput"
+              id="lastName"
+              type="text"
+              placeholder="Last Name"
+            />
+            <p class="errorMsg" id="lastNameError"></p>
+
             <label for="email" class="visually-hidden">Email</label>
             <input
               class="formInput"
-              type="email"
-              name="email"
               id="email"
+              type="email"
               placeholder="Email Address"
             />
+            <p class="errorMsg" id="emailError"></p>
+
             <label for="password" class="visually-hidden">Password</label>
             <input
               class="formInput"
-              type="password"
-              name="password"
               id="password"
+              type="password"
               placeholder="Password"
             />
+            <p class="errorMsg" id="passwordError"></p>
+
             <button type="submit" class="formInput button">
               Claim your free trial
             </button>
@@ -79,5 +96,6 @@
         >. Coded by <a href="#">ADI</a>.
       </p>
     </footer>
+    <script src="./scripts/script.js"></script>
   </body>
 </html>

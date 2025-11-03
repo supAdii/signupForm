@@ -44,12 +44,16 @@ body {
   border-radius: 0.5em;
   padding: 2%;
   text-align: center;
+  cursor: pointer;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.subDiv:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
 }
 
 .paraDiv {
   font-size: 12px;
-  cursor: pointer;
 }
 
 .formDiv {
@@ -83,9 +87,38 @@ body {
   border: 2px solid hsla(248, 32%, 49%, 0.3);
 }
 
+.formInput:hover,
 .formInput:focus {
-  border: 2px solid var(--lightPurple);
+  border-color: hsla(248, 32%, 49%, 0.8);
+  box-shadow: 0 3px 0 3px hsla(248, 32%, 49%, 0.2);
 }
+
+.successMsg {
+  color: green;
+  font-size: 0.9rem;
+  text-align: center;
+  margin-bottom: 0.5rem;
+  display: none; 
+}
+
+
+.errorMsg {
+  color: red;
+  font-size: 0.75rem;
+  margin-top: 0.2rem;
+  display: none; 
+}
+
+.formInput.error {
+  border-color: red;
+  box-shadow: 0 0 5px rgba(255,0,0,0.3);
+}
+
+.formInput.success {
+  border-color: green;
+  box-shadow: 0 0 5px rgba(0,255,0,0.2);
+}
+
 
 .button {
   background-color: var(--green);
@@ -95,6 +128,10 @@ body {
   border: none;
   box-shadow: 0 4px 2px rgba(0, 0, 0, 0.3);
   cursor: pointer;
+}
+
+.button:hover {
+  box-shadow: 0 8px 8px rgba(0, 0, 0, 0.3);
 }
 
 .formText {
