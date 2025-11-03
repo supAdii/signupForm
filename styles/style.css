@@ -10,7 +10,7 @@
 
 body {
   font-family: "Poppins", sans-serif;
-  background-image: url("/images/bg-intro-desktop.png");
+  background-image: url("../images/bg-intro-desktop.png");
   background-color: var(--red);
   margin: 0;
   padding: 0;
@@ -155,7 +155,7 @@ body {
 /* Mobile devices */
 @media (max-width: 37.5rem) {
   body {
-    background-image: url("/images/bg-intro-mobile.png");
+    background-image: url("../images/bg-intro-mobile.png");
     font-size: 14px;
   }
 
