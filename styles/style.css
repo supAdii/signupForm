@@ -1,0 +1,116 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:root {
+  --red: hsl(0, 100%, 74%);
+  --green: hsl(154, 59%, 51%);
+  --purple: hsl(248, 32%, 49%);
+  --grey: hsl(249, 10%, 26%);
+  --lightPurple: hsl(246, 25%, 77%);
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-image: url("/images/bg-intro-desktop.png");
+  background-color: var(--red);
+  margin: 0;
+  padding: 0;
+  color: #fff;
+  font-size: 16px;
+}
+
+.mainContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 10%;
+  gap: 5%;
+}
+
+.mainContainer .introDiv {
+  max-width: 25%;
+}
+
+.mainHeading {
+  font-weight: 700;
+}
+
+.headerPara {
+  font-size: 12px;
+}
+
+.subDiv {
+  background-color: var(--purple);
+  border-radius: 0.5em;
+  padding: 2%;
+  text-align: center;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.paraDiv {
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.formDiv {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  flex-grow: 0.2;
+}
+
+.loginForm {
+  background-color: #fff;
+  border-radius: 0.5em;
+  padding: 5%;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.visually-hidden {
+  display: none;
+}
+
+.formDiv form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 8%;
+}
+
+.formInput {
+  padding: 1rem;
+  border-radius: 0.5em;
+  border: 2px solid hsla(248, 32%, 49%, 0.3);
+}
+
+.formInput:focus {
+  border: 2px solid var(--lightPurple);
+}
+
+.button {
+  background-color: var(--green);
+  text-transform: uppercase;
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  box-shadow: 0 4px 2px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+
+.formText {
+  color: var(--lightPurple);
+  font-size: 9px;
+  text-align: center;
+}
+
+.redText {
+  color: red;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
