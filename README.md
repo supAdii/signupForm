@@ -3,7 +3,7 @@
 A modern and fully responsive sign-up form built with **HTML**, **CSS**, and **JavaScript**.  
 
 ## PREVIEW 📸 
-(images/bg-intro-mobile.png)
+(/images/bg-intro-mobile.png)
 
 ## 🚀 Features
 
