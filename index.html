@@ -39,41 +39,78 @@
 
           <form class="loginForm" action="#">
             <p id="successMessage" class="successMsg"></p>
-            <label for="firstName" class="visually-hidden">First Name</label>
-            <input
-              class="formInput"
-              id="firstName"
-              type="text"
-              placeholder="First Name"
-            />
-            <p class="errorMsg" id="firstNameError"></p>
 
-            <label for="lastName" class="visually-hidden">Last Name</label>
-            <input
-              class="formInput"
-              id="lastName"
-              type="text"
-              placeholder="Last Name"
-            />
-            <p class="errorMsg" id="lastNameError"></p>
+            <!-- First Name -->
+            <div class="input-container">
+              <label for="firstName" class="visually-hidden">First Name</label>
+              <input
+                class="formInput"
+                id="firstName"
+                type="text"
+                placeholder="First Name"
+              />
+              <img
+                src="./images/icon-error.svg"
+                alt="Error icon"
+                class="error-icon"
+                id="firstNameIcon"
+              />
+              <p class="errorMsg" id="firstNameError"></p>
+            </div>
 
-            <label for="email" class="visually-hidden">Email</label>
-            <input
-              class="formInput"
-              id="email"
-              type="email"
-              placeholder="Email Address"
-            />
-            <p class="errorMsg" id="emailError"></p>
+            <!-- Last Name -->
+            <div class="input-container">
+              <label for="lastName" class="visually-hidden">Last Name</label>
+              <input
+                class="formInput"
+                id="lastName"
+                type="text"
+                placeholder="Last Name"
+              />
+              <img
+                src="./images/icon-error.svg"
+                alt="Error icon"
+                class="error-icon"
+                id="lastNameIcon"
+              />
+              <p class="errorMsg" id="lastNameError"></p>
+            </div>
 
-            <label for="password" class="visually-hidden">Password</label>
-            <input
-              class="formInput"
-              id="password"
-              type="password"
-              placeholder="Password"
-            />
-            <p class="errorMsg" id="passwordError"></p>
+            <!-- Email -->
+            <div class="input-container">
+              <label for="email" class="visually-hidden">Email</label>
+              <input
+                class="formInput"
+                id="email"
+                type="email"
+                placeholder="Email Address"
+              />
+              <img
+                src="./images/icon-error.svg"
+                alt="Error icon"
+                class="error-icon"
+                id="emailIcon"
+              />
+              <p class="errorMsg" id="emailError"></p>
+            </div>
+
+            <!-- Password -->
+            <div class="input-container">
+              <label for="password" class="visually-hidden">Password</label>
+              <input
+                class="formInput"
+                id="password"
+                type="password"
+                placeholder="Password"
+              />
+              <img
+                src="./images/icon-error.svg"
+                alt="Error icon"
+                class="error-icon"
+                id="passwordIcon"
+              />
+              <p class="errorMsg" id="passwordError"></p>
+            </div>
 
             <button type="submit" class="formInput button">
               Claim your free trial
