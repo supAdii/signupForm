@@ -3,7 +3,9 @@
 A modern and fully responsive sign-up form built with **HTML**, **CSS**, and **JavaScript**.  
 
 ## PREVIEW 📸 
-[[(./images/preview.jpg)]](https://github.com/supAdii/signupForm/blob/ac72b2bf56307d041abeb09766e2e36bd6d2c938/images/preview.jpg)
+![Screenshot](./images/preview.jpg)
+
+
 ## 🚀 Demo
 
 Check out the live project here:  
