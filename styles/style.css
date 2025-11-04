@@ -81,10 +81,47 @@ body {
   padding: 8%;
 }
 
+.input-container {
+  position: relative;
+}
+
 .formInput {
+  min-width: 90%;
   padding: 1rem;
+  padding-right: 1rem;
   border-radius: 0.5em;
   border: 2px solid hsla(248, 32%, 49%, 0.3);
+}
+
+.error-icon {
+  position: absolute;
+  right: 1rem;
+  top: 42%;
+  transform: translateY(-50%);
+  width: 1.5rem;
+  height: 1.5rem;
+  display: none;
+}
+
+.formInput.error {
+  border-color: var(--red);
+  box-shadow: 0 0 5px rgba(255, 0, 0, 0.3);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-50%) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(-50%) scale(1);
+  }
+}
+
+.error-icon.show {
+  display: block;
+  animation: fadeIn 0.3s ease;
 }
 
 .formInput:hover,
@@ -98,27 +135,39 @@ body {
   font-size: 0.9rem;
   text-align: center;
   margin-bottom: 0.5rem;
-  display: none; 
+  display: none;
 }
 
+#errorImg {
+  max-width: 8%;
+  position: absolute;
+  left: 70%;
+  top: 41%;
+}
+
+.errorEmail {
+  color: hsl(0, 100%, 74%);
+  font-weight: 600;
+  opacity: 0.8;
+}
 
 .errorMsg {
   color: red;
-  font-size: 0.75rem;
-  margin-top: 0.2rem;
-  display: none; 
+  font-size: 0.6rem;
+  margin: 0;
+  display: none;
+  text-align: right;
 }
 
 .formInput.error {
   border-color: red;
-  box-shadow: 0 0 5px rgba(255,0,0,0.3);
+  box-shadow: 0 0 5px rgba(255, 0, 0, 0.3);
 }
 
 .formInput.success {
   border-color: green;
-  box-shadow: 0 0 5px rgba(0,255,0,0.2);
+  box-shadow: 0 0 5px rgba(0, 255, 0, 0.2);
 }
-
 
 .button {
   background-color: var(--green);
@@ -159,12 +208,12 @@ body {
     font-size: 14px;
   }
 
-  .mainContainer{
+  .mainContainer {
     flex-direction: column;
     gap: 1rem;
   }
 
-  .introDiv{
+  .introDiv {
     min-width: 100%;
   }
 
@@ -178,13 +227,25 @@ body {
     text-align: center;
   }
 
-  .formDiv{
+  .formDiv {
     gap: 1rem;
   }
 
   .formInput {
     padding: 0.8rem;
     font-size: 0.9rem;
+  }
+
+  .error-icon {
+    right: 0.5rem;
+    width: 1rem;
+    height: 1rem;
+    display: none;
+  }
+
+  .errorEmail {
+    color: hsl(0, 100%, 74%);
+    font-size: 0.7rem;
   }
 
   .button {
@@ -201,4 +262,3 @@ body {
     padding: 8%;
   }
 }
-
