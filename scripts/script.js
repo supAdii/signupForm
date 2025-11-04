@@ -10,10 +10,24 @@ const lastNameError = document.getElementById("lastNameError");
 const emailError = document.getElementById("emailError");
 const passwordError = document.getElementById("passwordError");
 
+const firstNameIcon = document.getElementById("firstNameIcon");
+const lastNameIcon = document.getElementById("lastNameIcon");
+const emailIcon = document.getElementById("emailIcon");
+const passwordIcon = document.getElementById("passwordIcon");
+
+const originalPlaceholders = {
+  firstName: userFirstName.placeholder,
+  lastName: lastName.placeholder,
+  email: email.placeholder,
+  password: password.placeholder,
+};
+
+const errorEmail = "email@example/com";
+
 const isValidEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
 const validateInput = (event) => {
-  event.preventDefault(); // prevent form submission
+  event.preventDefault();
   let isValid = true;
 
   const firstNameVal = userFirstName.value.trim();
@@ -21,81 +35,103 @@ const validateInput = (event) => {
   const emailVal = email.value.trim();
   const passwordVal = password.value.trim();
 
+  // Helper functions
+  function showError(input, msgEl, iconEl, message) {
+    msgEl.textContent = message;
+    msgEl.style.display = "block";
+    input.classList.add("error");
+    iconEl.classList.add("show");
+
+    // Remove placeholder after showing error
+    input.placeholder = "";
+  }
+
+  function hideError(input, msgEl, iconEl) {
+    msgEl.style.display = "none";
+    input.classList.remove("error");
+    iconEl.classList.remove("show");
+    input.classList.add("success");
+
+    // Restore the original placeholder
+    input.placeholder = originalPlaceholders[input.id];
+  }
+
   // First Name
   if (!firstNameVal) {
-    firstNameError.textContent = "First name cannot be empty";
-    firstNameError.style.display = "block";
-    userFirstName.classList.add("error");
+    showError(
+      userFirstName,
+      firstNameError,
+      firstNameIcon,
+      "First Name cannot be empty"
+    );
     isValid = false;
   } else {
-    firstNameError.style.display = "none";
-    userFirstName.classList.remove("error");
-    userFirstName.classList.add("success");
+    hideError(userFirstName, firstNameError, firstNameIcon);
   }
 
   // Last Name
   if (!lastNameVal) {
-    lastNameError.textContent = "Last name cannot be empty";
-    lastNameError.style.display = "block";
-    lastName.classList.add("error");
+    showError(
+      lastName,
+      lastNameError,
+      lastNameIcon,
+      "Last Name cannot be empty"
+    );
     isValid = false;
   } else {
-    lastNameError.style.display = "none";
-    lastName.classList.remove("error");
-    lastName.classList.add("success");
+    hideError(lastName, lastNameError, lastNameIcon);
   }
 
   // Email
   if (!emailVal) {
-    emailError.textContent = "Email cannot be empty";
-    emailError.style.display = "block";
-    email.classList.add("error");
+    showError(email, emailError, emailIcon, "Looks like this is not an email");
     isValid = false;
+
+    // Show example email style
+    email.value = "email@example/com";
+    email.classList.add("errorEmail");
   } else if (!isValidEmail(emailVal)) {
-    emailError.textContent = "Please enter a valid email";
-    emailError.style.display = "block";
-    email.classList.add("error");
+    showError(email, emailError, emailIcon, "Looks like this is not an email");
     isValid = false;
+    email.classList.add("errorEmail");
   } else {
-    emailError.style.display = "none";
-    email.classList.remove("error");
-    email.classList.add("success");
+    hideError(email, emailError, emailIcon);
+    email.classList.remove("errorEmail");
   }
 
   // Password
   if (!passwordVal) {
-    passwordError.textContent = "Password cannot be empty";
-    passwordError.style.display = "block";
-    password.classList.add("error");
+    showError(
+      password,
+      passwordError,
+      passwordIcon,
+      "Password cannot be empty"
+    );
     isValid = false;
   } else if (passwordVal.length < 6) {
-    passwordError.textContent = "Password must be at least 6 characters";
-    passwordError.style.display = "block";
-    password.classList.add("error");
+    showError(
+      password,
+      passwordError,
+      passwordIcon,
+      "Password must be at least 6 characters"
+    );
     isValid = false;
   } else {
-    passwordError.style.display = "none";
-    password.classList.remove("error");
-    password.classList.add("success");
+    hideError(password, passwordError, passwordIcon);
   }
 
+  // Success message
   if (isValid) {
     successMessage.textContent = "Success! Your account has been created.";
     successMessage.style.display = "block";
 
-    userFirstName.value = "";
-    lastName.value = "";
-    email.value = "";
-    password.value = "";
-
-    userFirstName.classList.remove("success");
-    lastName.classList.remove("success");
-    email.classList.remove("success");
-    password.classList.remove("success");
+    [userFirstName, lastName, email, password].forEach((input) => {
+      input.value = "";
+      input.classList.remove("success");
+    });
   } else {
     successMessage.style.display = "none";
   }
 };
 
-// Attach event listener
 submitButton.addEventListener("click", validateInput);
